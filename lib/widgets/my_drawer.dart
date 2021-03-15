@@ -8,7 +8,7 @@ class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      elevation: 8,
+      elevation: 0,
       child: ListView(
         children: [
           DrawerHeader(

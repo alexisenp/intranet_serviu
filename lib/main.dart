@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intranet_serviu/widgets/aplicaciones_banner.dart';
 import 'package:intranet_serviu/widgets/aplicacion.dart';
 import 'package:intranet_serviu/widgets/my_drawer.dart';
+import 'package:intranet_serviu/widgets/my_right_drawer.dart';
 import 'package:intranet_serviu/widgets/noticia.dart';
 import 'package:intranet_serviu/widgets/noticiasBanner.dart';
 
@@ -47,19 +48,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(),
       drawer: !isDesktop ? MyDrawer() : null,
+      endDrawer: !isDesktop ? MyRightDrawer() : null,
       body: SafeArea(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             if (isDesktop) MyDrawer(),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  BuildBody(),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BuildBody(),
               ),
             ),
+            if (isDesktop) MyRightDrawer(),
           ],
         ),
       ),
@@ -77,6 +78,7 @@ class BuildBody extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           BuildAplicaciones(),
           SizedBox(height: 20),

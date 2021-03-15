@@ -14,7 +14,21 @@ class BuildNoticias extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Text('Noticias'),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Noticias'),
+              TextButton(
+                  onPressed: () => {},
+                  child: Row(
+                    children: [
+                      Text('Ver todas'),
+                      SizedBox(width: 10),
+                      Icon(Icons.arrow_right)
+                    ],
+                  ))
+            ],
+          ),
         ),
         Container(
           height: 250,
