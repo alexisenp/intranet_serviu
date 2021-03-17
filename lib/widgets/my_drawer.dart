@@ -14,9 +14,12 @@ class MyDrawer extends StatelessWidget {
           DrawerHeader(
             child: Column(
               children: [
-                Icon(
-                  Icons.person,
-                  size: 100.0,
+                CircleAvatar(
+                  radius: 50,
+                  child: Icon(
+                    Icons.person,
+                    size: 85.0,
+                  ),
                 ),
                 Text(
                   'Felipe Pizarro Alcayaga',

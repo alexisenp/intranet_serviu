@@ -9,7 +9,6 @@ class BuildNoticias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.max,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
@@ -19,28 +18,19 @@ class BuildNoticias extends StatelessWidget {
             children: [
               Text('Noticias'),
               TextButton(
-                  onPressed: () => {},
-                  child: Row(
-                    children: [
-                      Text('Ver todas'),
-                      SizedBox(width: 10),
-                      Icon(Icons.arrow_right)
-                    ],
-                  ))
+                onPressed: () => {},
+                child: Row(
+                  children: [
+                    Text('Ver todas'),
+                    SizedBox(width: 10),
+                    Icon(Icons.arrow_right)
+                  ],
+                ),
+              )
             ],
           ),
         ),
-        Container(
-          height: 250,
-          width: double.infinity,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: 10,
-            itemBuilder: (BuildContext context, int index) {
-              return BuildNoticia();
-            },
-          ),
-        )
+        BuildNoticia(),
       ],
     );
   }
